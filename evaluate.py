@@ -32,7 +32,7 @@ def main():
         started = time.perf_counter()
         actual, error = None, None
         try:
-            actual = respond(case["question"], case.get("history", []))
+            actual = respond(case["question"], case.get("history", []), case.get("initialState"))
         except RuntimeError as failure:
             error = str(failure)
         latency_ms = round((time.perf_counter() - started) * 1000)

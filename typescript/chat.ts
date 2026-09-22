@@ -3,8 +3,10 @@ import { stdin, stdout } from "node:process";
 import { respond } from "./chatbot.ts";
 import type { Message } from "./types.ts";
 import { backend, model } from "./backend.ts";
+import { createState } from "./state.ts";
 
 const history: Message[] = [];
+let state = createState();
 const terminal = createInterface({ input: stdin, output: stdout });
 console.log(`Practice chatbot (${backend}: ${backend === "offline" ? "simulator" : model}). Type /quit to exit or /reset to clear history.`);
 try {
@@ -19,17 +21,19 @@ try {
     if (question === "/quit") break;
     if (question === "/reset") {
       history.length = 0;
+      state = createState();
       continue;
     }
     if (!question) continue;
     let answer;
     try {
-      answer = await respond(question, history);
+      answer = await respond(question, history, state);
     } catch (error) {
       console.error(`Error: ${(error as Error).message}`);
       continue;
     }
     console.log(`Bot: ${answer.text} [${answer.decision}]`);
+    state = answer.state;
     history.push(
       { role: "user", content: question },
       { role: "assistant", content: answer.text },

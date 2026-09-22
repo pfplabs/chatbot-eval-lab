@@ -49,7 +49,13 @@
       }
     ],
     "question": "Can I return this after 45 days?",
-    "expected": "eligible"
+    "expected": "eligible",
+    "initialState": {
+      "pendingQuestion": null,
+      "daysSincePurchase": null,
+      "isPremiumMember": true,
+      "orderNumber": null
+    }
   },
   {
     "id": "history-followup",
@@ -65,7 +71,13 @@
       }
     ],
     "question": "I'm a premium member.",
-    "expected": "eligible"
+    "expected": "eligible",
+    "initialState": {
+      "pendingQuestion": "membership",
+      "daysSincePurchase": 45,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "followup-days-29",
@@ -81,7 +93,13 @@
       }
     ],
     "question": "29",
-    "expected": "eligible"
+    "expected": "eligible",
+    "initialState": {
+      "pendingQuestion": "purchase_age",
+      "daysSincePurchase": null,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "followup-days-30",
@@ -97,7 +115,13 @@
       }
     ],
     "question": "30",
-    "expected": "eligible"
+    "expected": "eligible",
+    "initialState": {
+      "pendingQuestion": "purchase_age",
+      "daysSincePurchase": null,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "followup-days-45",
@@ -113,7 +137,13 @@
       }
     ],
     "question": "45",
-    "expected": "ask_membership"
+    "expected": "ask_membership",
+    "initialState": {
+      "pendingQuestion": "purchase_age",
+      "daysSincePurchase": null,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "followup-days-61",
@@ -129,7 +159,13 @@
       }
     ],
     "question": "61",
-    "expected": "ineligible"
+    "expected": "ineligible",
+    "initialState": {
+      "pendingQuestion": "purchase_age",
+      "daysSincePurchase": null,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "followup-membership-yes",
@@ -153,7 +189,13 @@
       }
     ],
     "question": "yes",
-    "expected": "eligible"
+    "expected": "eligible",
+    "initialState": {
+      "pendingQuestion": "membership",
+      "daysSincePurchase": 45,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "followup-membership-no",
@@ -177,7 +219,13 @@
       }
     ],
     "question": "no",
-    "expected": "ineligible"
+    "expected": "ineligible",
+    "initialState": {
+      "pendingQuestion": "membership",
+      "daysSincePurchase": 45,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "number-without-days-question",
@@ -193,7 +241,13 @@
       }
     ],
     "question": "29",
-    "expected": "ask_days"
+    "expected": "ask_days",
+    "initialState": {
+      "pendingQuestion": "order_number",
+      "daysSincePurchase": null,
+      "isPremiumMember": null,
+      "orderNumber": null
+    }
   },
   {
     "id": "fresh-number-no-context",

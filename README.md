@@ -69,6 +69,8 @@ The return policy is hardcoded. Retrieval matches the word `return`. There is no
 
 See [SECURITY.md](SECURITY.md) before adapting this to real data.
 
-## Current checkpoint: history
+## Current checkpoint: explicit state
 
-Offline now passes 16/16. Try live mode and inspect the order-number case. A passing simulator is not a real-model quality guarantee. Read message traces before proposing a fix.
+The order-number fixture supplies an explicit pending question. Bare numeric identifiers are saved as strings, not ages. If purchase age is missing after an order-number reply, code asks for it without a model call. Empty policy context also returns directly. Other eligibility responses still use the model.
+
+State is returned in `answer.state`; the chat loop carries it into the next call and clears it with `/reset`. Traces include `modelCalled`, `stateBefore`, and `stateAfterReply`. When `modelCalled` is false, the messages were constructed but not sent.

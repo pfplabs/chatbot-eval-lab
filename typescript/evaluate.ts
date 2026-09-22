@@ -22,7 +22,7 @@ for (const testCase of cases) {
   let actual: Awaited<ReturnType<typeof respond>> | null = null;
   let error: string | null = null;
   try {
-    actual = await respond(testCase.question, testCase.history ?? []);
+    actual = await respond(testCase.question, testCase.history ?? [], testCase.initialState);
   } catch (failure) {
     error = (failure as Error).message;
   }
