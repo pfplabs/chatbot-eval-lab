@@ -26,10 +26,10 @@ export async function respond(question: string, history: Message[] = [], previou
         "Only ask about missing membership when the purchase was more than 30 " +
         "but no more than 60 days ago. Purchases older than 60 days are ineligible. " +
         "If purchase age is missing, ask how many days ago the item was purchased. " +
-        "If the purchase was at most 30 days ago, it is eligible regardless of membership. " + 
+        "If the purchase was at most 30 days ago, it is eligible regardless of membership. " +
         "Interpret short replies using the immediately preceding assistant question. " +
         "Do not treat order numbers or other identifiers as purchase ages. " +
-        "Use facts already provided in the conversation instead of asking for them again. " + 
+        "Use facts already provided in the conversation instead of asking for them again. " +
         "When you ask for an order number and the user replies '12345', " +
         "that supplies an order number, not a purchase age. Ask for purchase age if unknown. "
     },
