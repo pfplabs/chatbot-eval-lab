@@ -10,6 +10,7 @@
     "chat": "node typescript/chat.ts",
     "eval:python": "python3 evaluate.py",
     "eval:offline": "node typescript/evaluate.ts --offline",
-    "chat:offline": "node typescript/chat.ts --offline"
+    "chat:offline": "node typescript/chat.ts --offline",
+    "test": "node --test tests/state.test.ts"
   }
 }

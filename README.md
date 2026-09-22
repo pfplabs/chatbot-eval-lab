@@ -74,3 +74,9 @@ See [SECURITY.md](SECURITY.md) before adapting this to real data.
 The order-number fixture supplies an explicit pending question. Bare numeric identifiers are saved as strings, not ages. If purchase age is missing after an order-number reply, code asks for it without a model call. Empty policy context also returns directly. Other eligibility responses still use the model.
 
 State is returned in `answer.state`; the chat loop carries it into the next call and clears it with `/reset`. Traces include `modelCalled`, `stateBefore`, and `stateAfterReply`. When `modelCalled` is false, the messages were constructed but not sent.
+
+## Walkthrough and practice
+
+- [Step-by-step exercise](EXERCISE.md)
+
+The public repository is [pfplabs/chatbot-eval-lab](https://github.com/pfplabs/chatbot-eval-lab).
