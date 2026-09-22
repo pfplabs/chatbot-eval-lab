@@ -69,6 +69,6 @@ The return policy is hardcoded. Retrieval matches the word `return`. There is no
 
 See [SECURITY.md](SECURITY.md) before adapting this to real data.
 
-## Current checkpoint: start
+## Current checkpoint: history
 
-Begin by explaining the failing cases. Locate the request construction and identify one change to test. Leave the simulator and expected answers alone while you investigate the application.
+Offline now passes 16/16. Try live mode and inspect the order-number case. A passing simulator is not a real-model quality guarantee. Read message traces before proposing a fix.

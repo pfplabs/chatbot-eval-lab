@@ -8,9 +8,12 @@ def retrieve(question):
 
 
 def respond(question, history=None):
-    context = retrieve(question)
+    conversation = [message for message in (history or []) if message["role"] in ("user", "assistant")]
+    query = "\n".join([message["content"] for message in conversation if message["role"] == "user"] + [question])
+    context = retrieve(query)
     messages = [
-        {"role": "system", "content": "Answer customer questions using the provided policy. Be concise and give a direct answer."},
+        {"role": "system", "content": "Answer customer questions using the provided policy. Be concise and give a direct answer. If member status is missing and changes eligibility, ask a clarifying question."},
+        *conversation,
         {"role": "user", "content": f"Policy:\n{context}\n\nQuestion:\n{question}"},
     ]
     answer = generate_answer(messages)

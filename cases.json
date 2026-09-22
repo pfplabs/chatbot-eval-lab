@@ -66,5 +66,139 @@
     ],
     "question": "I'm a premium member.",
     "expected": "eligible"
+  },
+  {
+    "id": "followup-days-29",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "I want to return a product"
+      },
+      {
+        "role": "assistant",
+        "content": "How many days ago did you buy it?"
+      }
+    ],
+    "question": "29",
+    "expected": "eligible"
+  },
+  {
+    "id": "followup-days-30",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "I want to return a product"
+      },
+      {
+        "role": "assistant",
+        "content": "How many days ago did you buy it?"
+      }
+    ],
+    "question": "30",
+    "expected": "eligible"
+  },
+  {
+    "id": "followup-days-45",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "I want to return a product"
+      },
+      {
+        "role": "assistant",
+        "content": "How many days ago did you buy it?"
+      }
+    ],
+    "question": "45",
+    "expected": "ask_membership"
+  },
+  {
+    "id": "followup-days-61",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "I want to return a product"
+      },
+      {
+        "role": "assistant",
+        "content": "How many days ago did you buy it?"
+      }
+    ],
+    "question": "61",
+    "expected": "ineligible"
+  },
+  {
+    "id": "followup-membership-yes",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "I want to return a product"
+      },
+      {
+        "role": "assistant",
+        "content": "How many days ago did you buy it?"
+      },
+      {
+        "role": "user",
+        "content": "45"
+      },
+      {
+        "role": "assistant",
+        "content": "Are you a premium member?"
+      }
+    ],
+    "question": "yes",
+    "expected": "eligible"
+  },
+  {
+    "id": "followup-membership-no",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "I want to return a product"
+      },
+      {
+        "role": "assistant",
+        "content": "How many days ago did you buy it?"
+      },
+      {
+        "role": "user",
+        "content": "45"
+      },
+      {
+        "role": "assistant",
+        "content": "Are you a premium member?"
+      }
+    ],
+    "question": "no",
+    "expected": "ineligible"
+  },
+  {
+    "id": "number-without-days-question",
+    "category": "missing_information",
+    "history": [
+      {
+        "role": "user",
+        "content": "I want to return a product"
+      },
+      {
+        "role": "assistant",
+        "content": "What is your order number?"
+      }
+    ],
+    "question": "29",
+    "expected": "ask_days"
+  },
+  {
+    "id": "fresh-number-no-context",
+    "category": "missing_information",
+    "question": "29",
+    "expected": "no_context"
   }
 ]
