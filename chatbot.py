@@ -1,0 +1,17 @@
+from backend import generate_answer
+
+POLICY = "Returns are accepted within 30 days. Premium members may return items within 60 days."
+
+
+def retrieve(question):
+    return POLICY if "return" in question.lower() else ""
+
+
+def respond(question, history=None):
+    context = retrieve(question)
+    messages = [
+        {"role": "system", "content": "Answer customer questions using the provided policy. Be concise and give a direct answer."},
+        {"role": "user", "content": f"Policy:\n{context}\n\nQuestion:\n{question}"},
+    ]
+    answer = generate_answer(messages)
+    return {**answer, "trace": {"context": context, "messages": messages}}

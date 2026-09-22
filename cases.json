@@ -1,0 +1,70 @@
+[
+  {
+    "id": "standard-15",
+    "category": "basic",
+    "question": "Can I return something I bought 15 days ago?",
+    "expected": "eligible"
+  },
+  {
+    "id": "outside-75",
+    "category": "basic",
+    "question": "I'm a premium member. Can I return this after 75 days?",
+    "expected": "ineligible"
+  },
+  {
+    "id": "policy-known-45",
+    "category": "policy",
+    "question": "I'm a premium member. Can I return this after 45 days?",
+    "expected": "eligible"
+  },
+  {
+    "id": "policy-standard-45",
+    "category": "policy",
+    "question": "I'm a standard member. Can I return this after 45 days?",
+    "expected": "ineligible"
+  },
+  {
+    "id": "policy-unknown-45",
+    "category": "missing_information",
+    "question": "I bought this 45 days ago. Can I return it?",
+    "expected": "ask_membership"
+  },
+  {
+    "id": "unknown-days",
+    "category": "missing_information",
+    "question": "Can I return this?",
+    "expected": "ask_days"
+  },
+  {
+    "id": "history-premium",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "I'm a premium member."
+      },
+      {
+        "role": "assistant",
+        "content": "How can I help?"
+      }
+    ],
+    "question": "Can I return this after 45 days?",
+    "expected": "eligible"
+  },
+  {
+    "id": "history-followup",
+    "category": "multi_turn",
+    "history": [
+      {
+        "role": "user",
+        "content": "Can I return something I bought 45 days ago?"
+      },
+      {
+        "role": "assistant",
+        "content": "Are you a premium member?"
+      }
+    ],
+    "question": "I'm a premium member.",
+    "expected": "eligible"
+  }
+]

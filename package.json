@@ -1,0 +1,15 @@
+{
+  "name": "chatbot-eval-lab",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "eval": "node typescript/evaluate.ts",
+    "chat": "node typescript/chat.ts",
+    "eval:python": "python3 evaluate.py",
+    "eval:offline": "node typescript/evaluate.ts --offline",
+    "chat:offline": "node typescript/chat.ts --offline"
+  }
+}
